@@ -7,6 +7,6 @@ while colour != "":
     if colour in COLOUR_CODES:
         print("The hexadecimal code for", colour, "is", COLOUR_CODES[colour])
     else:
-        print("Invalid colour name")
+        print("Colour not in colour directory")
     colour = input("Enter colour name: ")
 
