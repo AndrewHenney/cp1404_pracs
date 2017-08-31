@@ -9,6 +9,9 @@ for word in word_list:
         word_count[word] = 1
 key_list = list(word_count.keys())
 key_list.sort()
-
+max_length = 0
 for word in key_list:
-    print('{} : {}'.format(word, word_count[word]))
+    if max_length < len(word):
+        max_length = len(word)
+for word in key_list:
+    print('{:{}} : {}'.format(word, max_length, word_count[word]))
