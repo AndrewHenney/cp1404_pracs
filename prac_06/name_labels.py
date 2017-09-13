@@ -1,19 +1,10 @@
-"""
-Kivy example for CP1404/CP5632, IT@JCU
-Dynamically create buttons based on content of dictionary
-Lindsay Ward
-Modified from popup_demo, 11/07/2016
-"""
-
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.button import Button
 from kivy.properties import StringProperty
 
-__author__ = 'Lindsay Ward'
 
-
-class DynamicWidgetsApp(App):
+class NameLabelsApp(App):
     """ Main program - Kivy app to demo dynamic widget creation """
     status_text = StringProperty()
 
@@ -22,17 +13,15 @@ class DynamicWidgetsApp(App):
         Construct main app
         """
         super().__init__(**kwargs)
-        # basic data example - dictionary of names: phone numbers
-        # TODO: After running it, add another entry to the dictionary and see how the layout changes
-        self.phonebook = {"Bob Brown": "0414144411", "Cat Cyan": "0441411211", "Oren Ochre": "0432123456"}
+        self.name_list= ['Bob', 'Ryan', 'Sam', 'Jack']
 
     def build(self):
         """
         Build the Kivy GUI
         :return: reference to the root Kivy widget
         """
-        self.title = "Dynamic Widgets"
-        self.root = Builder.load_file('dynamic_widgets.kv')
+        self.title = "Name Labels"
+        self.root = Builder.load_file('name_labels.kv')
         self.create_widgets()
         return self.root
 
@@ -41,12 +30,10 @@ class DynamicWidgetsApp(App):
         Create buttons from dictionary entries and add them to the GUI
         :return: None
         """
-        for name in self.phonebook:
-            # create a button for each phonebook entry 
-            temp_button = Button(text=name)
-            # temp_button.bind(on_release=self.press_entry)
+        for name in self.name_list:
+            temp_label = Butt(text=name)
             # add the button to the "entriesBox" using add_widget()
-            self.root.ids.entriesBox.add_widget(temp_button)
+            self.root.ids.entriesBox.add_widget(temp_label)
 
     def press_entry(self, instance):
         """
@@ -65,4 +52,4 @@ class DynamicWidgetsApp(App):
         """
         self.root.ids.entriesBox.clear_widgets()
 
-DynamicWidgetsApp().run()
+NameLabelsApp().run()
