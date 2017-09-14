@@ -31,19 +31,10 @@ class NameLabelsApp(App):
         :return: None
         """
         for name in self.name_list:
-            temp_label = Butt(text=name)
+            temp_label = Button(text=name)
             # add the button to the "entriesBox" using add_widget()
             self.root.ids.entriesBox.add_widget(temp_label)
 
-    def press_entry(self, instance):
-        """
-        Handler for pressing entry buttons
-        :param instance: the Kivy button instance
-        :return: None
-        """
-        # update status text
-        name = instance.text
-        self.status_text = "{}'s number is {}".format(name, self.phonebook[name])
 
     def clear_all(self):
         """

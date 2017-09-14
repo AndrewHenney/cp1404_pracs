@@ -1,3 +1,11 @@
+<Label>:
+    canvas.before:
+        Color:
+            rgba: 0,0,0,1
+
+    color: 1, 1, 1, 1
+
+
 BoxLayout:
     orientation: 'vertical'
     BoxLayout:
@@ -6,6 +14,7 @@ BoxLayout:
             id: input_number
             font_size: 48
             text: '34'
+
             on_text: app.handle_calculate(input_number.text)
         BoxLayout:
             orientation: 'vertical'
@@ -19,5 +28,5 @@ BoxLayout:
     Label:
         id: output_label
         font_size: 48
-        color: (1, 1, 0, 1)
+
         text: '54.717'

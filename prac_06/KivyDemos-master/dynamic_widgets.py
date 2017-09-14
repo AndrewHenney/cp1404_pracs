@@ -44,7 +44,7 @@ class DynamicWidgetsApp(App):
         for name in self.phonebook:
             # create a button for each phonebook entry 
             temp_button = Button(text=name)
-            # temp_button.bind(on_release=self.press_entry)
+            temp_button.bind(on_release=self.press_entry)
             # add the button to the "entriesBox" using add_widget()
             self.root.ids.entriesBox.add_widget(temp_button)
 
