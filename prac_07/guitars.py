@@ -2,20 +2,16 @@ from prac_07.guitar import Guitar
 
 guitars=[]
 print("My guitars!")
-name = 'a'
-guitars.append(Guitar(input('Name: '), input('Year: '), input('Cost: ')))
-name = guitars.name
+name = input('Name: ')
 while name != '':
-    # year = input('Year: ')
-    # cost = input('Cost: ')
-    guitars.append(Guitar(input('Name: '), input('Year: '), input('Cost: ')))
-    # print("{} ({}) : ${:,.2f} added.".format(name, year, int(cost)))
-    name = guitars.name
-    # name = input('Name: ')
+    year = input('Year: ')
+    cost = input('Cost: ')
+    guitars.append(Guitar(str(name), int(year), float(cost)))
+    print("{} ({}) : ${:,.2f} added.".format(name, year, float(cost)))
+    name = input('Name: ')
 
 # guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
 # guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
-print(guitars)
 i=0
 for i, guitar in enumerate(guitars):
     if guitar.is_vintage() :
