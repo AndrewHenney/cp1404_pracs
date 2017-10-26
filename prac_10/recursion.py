@@ -33,4 +33,4 @@ def number_of_blocks(number_of_rows):
         return 0
     return number_of_rows + number_of_blocks(number_of_rows-1)
 
-print(number_of_blocks(6))
+print(number_of_blocks(20))
